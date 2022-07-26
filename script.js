@@ -71,51 +71,56 @@ $(document).ready(function () {
     });
 });
 
+const firebaseConfig = {
+    apiKey: "AIzaSyAaW9wV9dzmJHzW3L8SPar9RhKsNPp4QXE",
+    authDomain: "real-estate-contact-form-8da1a.firebaseapp.com",
+    databaseURL: "https://real-estate-contact-form-8da1a-default-rtdb.firebaseio.com",
+    projectId: "real-estate-contact-form-8da1a",
+    storageBucket: "real-estate-contact-form-8da1a.appspot.com",
+    messagingSenderId: "800717653252",
+    appId: "1:800717653252:web:46f82de5d080041bdcbc51"
+};
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
 
-//Unique Firebase Object
-var firebaseConfig = {
-    apiKey: "AIzaSyDWIzHuvJ_l_4T_ssKTlofHNMIrk2b5aAQ",
-    authDomain: "real-estate-c4061.firebaseapp.com",
-    projectId: "real-estate-c4061",
-    storageBucket: "real-estate-c4061.appspot.com",
-    messagingSenderId: "366838411581",
-    appId: "1:366838411581:web:014ebe0a68755c2c4e9554"
+// reference your database
+var contactFormDB = firebase.database().ref("contactForm");
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+    e.preventDefault();
+
+    var name = getElementVal("name");
+    var email = getElementVal("email");
+    var subject = getElementVal("subject");
+    var message = getElementVal("message");
+
+    saveMessages(name, email, subject, message);
+
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+
+    //   remove the alert
+    setTimeout(() => {
+        document.querySelector(".alert").style.display = "none";
+    }, 3000);
+
+    //   reset the form
+    document.getElementById("contactForm").reset();
+}
+
+const saveMessages = (name, email, subject, message) => {
+    var newContactForm = contactFormDB.push();
+
+    newContactForm.set({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+    });
 };
 
-//Initialize Firebase 
-firebase.initializeApp(firebaseConfig);
-var firestore = firebase.firestore()
-
-//Variable to access database collection
-
-const db = firestore.collection("realEstate")
-
-
-//Get submit form
-
-let submitButton = document.getElementById('submit')
-
-//Create Event Listner to allow form submission
-
-submitButton.addEventListener("click", (e) => {
-    //Prevent default form submision behavior
-    e.preventDefault()
-
-    //Get form Values
-    let Name = document.getElementById('name').value
-    let Email = document.getElementById('email').value
-    let Subject = document.getElementById('subject').value
-    let Message = document.getElementById('message').value
-
-    //save form data to firebase
-    db.doc().set({
-        name: Name,
-        email: Email,
-        subject: Subject,
-        message: Message
-    }).then(() => {
-        console.log("Data Saved")
-    }).catch((error) => {
-        console.log(error)
-    })
-})
+const getElementVal = (id) => {
+    return document.getElementById(id).value;
+};
