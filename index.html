@@ -12,7 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
@@ -228,7 +229,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class='fas fa-map-marker-alt'></i>
                             <div class="info">
                                 <div class="head">Address</div>
                                 <div class="sub-title">Toronto, Canada</div>
@@ -245,7 +246,8 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form>
+                    <form id="contactForm">
+                        <div class="alert">Your message sent</div>
                         <div class="fields">
                             <div class="field name">
                                 <input type="text" id="name" placeholder="Name" required>
@@ -263,8 +265,10 @@
                         <div class="button">
                             <button type="submit" id="submit">Send message</button>
                         </div>
+
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
@@ -277,8 +281,7 @@
             &#64;2022 All rights reserved.</span>
     </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="script.js"></script>
 </body>
 
