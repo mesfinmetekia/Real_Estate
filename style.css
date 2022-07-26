@@ -835,3 +835,15 @@ footer span a:hover {
     font-size: 150px;
     text-align: center;
 }
+
+/*This is alert for the success submisson of the contact us form*/
+.alert {
+    width: 100%;
+    background: rgb(0, 255, 106);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    display: none;
+}
