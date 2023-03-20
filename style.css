@@ -833,6 +833,8 @@ footer span a:hover {
     width: 100%;
     padding: 15px 15px;
     font-size: 15px;
+     font-size: 17px;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*This is alert for the success submisson of the contact us form*/
