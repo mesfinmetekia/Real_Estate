@@ -831,9 +831,7 @@ footer span a:hover {
 #readMore {
     height: 100%;
     width: 100%;
-    background-color: rgb(181, 232, 73);
-    font-size: 150px;
-    text-align: center;
+    font-size: 15px;
 }
 
 /*This is alert for the success submisson of the contact us form*/
