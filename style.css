@@ -831,6 +831,7 @@ footer span a:hover {
 #readMore {
     height: 100%;
     width: 100%;
+    padding: 15px 15px;
     font-size: 15px;
 }
 
